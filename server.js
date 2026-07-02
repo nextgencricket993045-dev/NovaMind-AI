@@ -11,7 +11,7 @@ app.use(express.json());
 
 const API_KEY = process.env.GEMINI_API_KEY;
 
-app.post("/chat", async (req, res) => {
+app.post("/api/chat", async (req, res) => {
   try {
     const { message } = req.body;
 
