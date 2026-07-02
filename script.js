@@ -1,3 +1,4 @@
+fetch("/api/chat", {
 const clearButton = document.getElementById("clear");
 const input = document.getElementById("message");
 const chat = document.getElementById("chat");
