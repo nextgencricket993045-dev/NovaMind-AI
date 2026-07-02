@@ -5,88 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NovaMind AI</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-background:linear-gradient(135deg,#4f46e5,#7c3aed);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:15px;
-}
-
-.card{
-width:100%;
-max-width:380px;
-background:white;
-border-radius:20px;
-padding:20px;
-box-shadow:0 10px 25px rgba(0,0,0,.25);
-}
-
-h1{
-text-align:center;
-color:#4f46e5;
-margin-bottom:15px;
-}
-
-#chat{
-height:300px;
-overflow-y:auto;
-border:1px solid #ddd;
-border-radius:12px;
-padding:10px;
-background:#f8f8f8;
-margin-bottom:15px;
-}
-
-.ai{
-background:#ecebff;
-padding:10px;
-border-radius:12px;
-margin-bottom:10px;
-}
-
-.user{
-background:#dbeafe;
-padding:10px;
-border-radius:12px;
-margin-bottom:10px;
-text-align:right;
-}
-
-input{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #ccc;
-font-size:16px;
-margin-bottom:10px;
-}
-
-button{
-width:100%;
-padding:14px;
-border:none;
-border-radius:12px;
-background:#4f46e5;
-color:white;
-font-size:18px;
-}
-
-button:active{
-transform:scale(.98);
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -106,54 +25,25 @@ How can I help you today?
 </div>
 
 <input
-id="msg"
+id="message"
 type="text"
 placeholder="Type your message...">
 
-<button onclick="sendMessage()">
+<div style="display:flex;gap:10px;margin-top:10px;">
+
+<button id="send">
 Send
+</button>
+
+<button id="clear">
+Clear
 </button>
 
 </div>
 
-<script>
-
-function sendMessage(){
-
-let input=document.getElementById("msg");
-let chat=document.getElementById("chat");
-
-if(input.value.trim()=="") return;
-
-chat.innerHTML+=`
-<div class="user">
-${input.value}
 </div>
-`;
 
-let message=input.value;
-
-input.value="";
-
-chat.scrollTop=chat.scrollHeight;
-
-setTimeout(function(){
-
-chat.innerHTML+=`
-<div class="ai">
-Sorry 😅<br>
-Real AI is not connected yet.<br>
-You wrote:<br><b>${message}</b>
-</div>
-`;
-
-chat.scrollTop=chat.scrollHeight;
-
-},1000);
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
