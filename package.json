@@ -1,16 +1,8 @@
-
 {
   "name": "novamind-ai",
   "version": "1.0.0",
-  "description": "NovaMind AI Assistant",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
-  },
+  "private": true,
   "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.19.2",
-    "node-fetch": "^2.7.0"
+    "@google/genai": "^1.14.0"
   }
 }
